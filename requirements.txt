@@ -9,6 +9,7 @@ click==8.1.8
 fastapi==0.115.12
 fastapi-responses==0.2.1
 h11==0.14.0
+httpx==0.27.0
 idna==3.10
 inflection==0.5.1
 iniconfig==2.1.0
