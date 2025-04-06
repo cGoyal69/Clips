@@ -1,4 +1,4 @@
-
+import os
 from fastapi import FastAPI
 from starlette_exporter import PrometheusMiddleware, handle_metrics
 from app.api.routes import clips
@@ -42,6 +42,8 @@ def read_root():
 def health_check():
     return {"status": "healthy"}
 
+# Railway requires dynamic port handling
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))  # default to 8000 for local dev
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port)
