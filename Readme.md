@@ -16,7 +16,7 @@ A FastAPI backend for streaming sound clips with play tracking and metrics.
 - **Backend**: FastAPI
 - **Database**: PostgreSQL
 - **Monitoring**: Prometheus + Grafana
-- **Deployment**: Render/Railway/Vercel
+- **Deployment**: Render
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ A FastAPI backend for streaming sound clips with play tracking and metrics.
 
 2. Create a `.env` file:
    ```
-   DATABASE_URL=postgresql://postgres:postgres@postgres:5432/soundclip
+   DATABASE_URL= postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt
    ```
 
 3. Start services with Docker Compose:
