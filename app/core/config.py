@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     # Use environment variable or fallback for local dev
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL",
-        "postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt"
+        "postgresql://postgres:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt?sslmode=require"
     )
 
     class Config:

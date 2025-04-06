@@ -11,7 +11,7 @@ from app.db.models import Clip
 
 # Use your PostgreSQL Render database here (ideally a test DB)
 POSTGRES_TEST_DATABASE_URL = (
-    "postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt"
+    "postgresql://postgres:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt?sslmode=require"
 )
 
 engine = create_engine(POSTGRES_TEST_DATABASE_URL)
