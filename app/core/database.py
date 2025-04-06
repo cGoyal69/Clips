@@ -6,7 +6,7 @@ from app.core.config import settings
 
 from sqlalchemy import create_engine
 
-engine = create_engine("postgresql://postgres:lWDtnVMWwwdSQFtpVZtWJNnxBeeLDLeH@soundverse-db.railway.internal:5432/railway")
+engine = create_engine("postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
