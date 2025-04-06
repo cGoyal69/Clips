@@ -2,7 +2,7 @@
 import requests
 import json
 
-BASE_URL = "http://localhost:8000/api"  # Change this to your deployment URL
+BASE_URL = "https://soundverse-assignment-chirag-goyal.onrender.com/api"  # Change this to your deployment URL
 
 def list_clips():
     """List all available clips"""
