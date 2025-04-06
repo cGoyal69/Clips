@@ -75,7 +75,7 @@ def test_create_clip(client):
         "description": "A newly created clip",
         "genre": "New",
         "duration": 15.5,
-        "audio_url": "https://example.com/new.mp3"
+        "audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
     }
     response = client.post("/api/clips/", json=new_clip)
     assert response.status_code == 201

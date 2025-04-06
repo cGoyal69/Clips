@@ -57,7 +57,7 @@ def add_new_clip():
         "description": "A clip added by the test client",
         "genre": "Test",
         "duration": 25.0,
-        "audio_url": "https://cdn.pixabay.com/download/audio/2021/08/08/audio_dc39bbc88c.mp3"
+        "audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
     }
     
     response = requests.post(f"{BASE_URL}/clips/", json=new_clip)
