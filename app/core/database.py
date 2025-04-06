@@ -6,9 +6,7 @@ from app.core.config import settings
 
 from sqlalchemy import create_engine
 
-DATABASE_URL = os.getenv("DATABASE_URL")  # Good
-
-engine = create_engine(DATABASE_URL)
+engine = create_engine("postgresql+psycopg2://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@localhost:5432/dbname_cektL")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
