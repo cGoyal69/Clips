@@ -6,8 +6,10 @@ from fastapi import HTTPException, status
 from app.db.models import Clip
 from app.schemas.clip import ClipCreate
 
-def get_clips(db: Session, skip: int = 0, limit: int = 100) -> List[Clip]:
-    return db.query(Clip).offset(skip).limit(limit).all()
+# app/services/clip_service.py
+
+def get_clips(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(Clip).order_by(Clip.id.asc()).offset(skip).limit(limit).all()
 
 def get_clip(db: Session, clip_id: int) -> Optional[Clip]:
     return db.query(Clip).filter(Clip.id == clip_id).first()
