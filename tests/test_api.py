@@ -1,24 +1,23 @@
-import pytest
+import sys
+import os
+import pytest  # ✅ ADD THIS LINE
+
+# Add the root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import sys
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 from app.main import app
 from app.core.database import Base, get_db
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.db.seed import seed_database
-
-POSTGRES_TEST_DATABASE_URL = os.getenv("DATABASE_URL")
+POSTGRES_TEST_DATABASE_URL = (
+    "postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt?sslmode=require"
+)
 
 engine = create_engine(POSTGRES_TEST_DATABASE_URL)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 @pytest.fixture(scope="module", autouse=True)
 def seed_and_override_db():
     """Seed DB before tests & override get_db."""
