@@ -1,23 +1,20 @@
-# tests/test_api.py
-
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from app.main import app
 from app.core.database import Base, get_db
 
-# Add seed module to path and import seeding function
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from app.db.seed import seed_database  # ✅ ← Import your seed logic
+from app.db.seed import seed_database
 
-# PostgreSQL DB for testing
-POSTGRES_TEST_DATABASE_URL = (
-    "postgresql://postgresql:1l8TBIbausK6TwyOBP1jfGOZT4EXHjTI@dpg-cvp8u3i4d50c73bq8akg-a.oregon-postgres.render.com/dbname_cekt?sslmode=require"
-)
+POSTGRES_TEST_DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(POSTGRES_TEST_DATABASE_URL)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
